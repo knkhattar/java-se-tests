@@ -1,5 +1,34 @@
-.WHAT ARE DIFFERENT TYPE OF WEB SERVICES
+***WHAT ARE DIFFERENT TYPE OF WEB SERVICES
+ a. soap(Simple Object Access Protocol)
+ b. Rest (Representational State Transfer)
+ 
 .STEPS TO IMPLEMENT A RESTFUL WEB SERVICE
-.STEPS TO IMPEMENT A SOAP BASED WEB SERVICE
+
+.ECLIPSE - STEPS TO IMPEMENT A SOAP BASED WEB SERVICE
+ 1. Create a new dynamic web project
+ 2. Create a package and hello world bean inside
+ 3. Right click on project->new->web service
+ 4. Provide the Web service type and implementation bean qualified name.
+ 5. click finish - Eclipse creates test client also.
+ 
+ .JAX-WS - STEPS TO IMPLEMENT A SOAP BASED WEB SERVICE
+ 
+ 1. Create a Web Service Endpoint Interface - annote it with @WebService, and @WebMethod
+ 2. Create a Web Service Endpoint Implementation
+ 3. Publish Without Server - Create a End point Publisher javax.xml.ws.Endpoint.publish("http://localhost:9999/ws/hello", new HelloWorldImpl());
+ 4. Publish with server - 
+ 4.1. Create a web service deployment descriptor - sun-jaxws.xml - it has all endpoints mention. provide details for name, implementation, url pattern
+ 4.2. web.xml
+ 4.2.1. add a listener com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+ 4.2.2. Add a Servlet - com.sun.xml.ws.transport.http.servlet.WSServlet - provide url mapping - it will handle requests for all services
+ 
+ 
+ 
 .WHY SOAP BASED WEB SERVICE HAS MORE ABILITY TO BE SECURE THAN REST BASED
+  SOAP security is well standardized through WS-SECURITY. Which has standards for end to end security. Irrespective of transport protocol.
+  Three main features are 
+  1. Integrity - Guidelines to sign soap messages to maintain integrity.
+  2. Confidentiality - Guidelines to encrypt soap messages.
+  
+  For REst we have only transmission level security and basic  authentication. There are Token based authentications also. 
 . 
