@@ -29,6 +29,7 @@
   Three main features are 
   1. Integrity - Guidelines to sign soap messages to maintain integrity.
   2. Confidentiality - Guidelines to encrypt soap messages.
+  3. ascertain the sender's identity - by attaching tokens
   
   For REst we have only transmission level security and basic  authentication. There are Token based authentications also. 
 . 
